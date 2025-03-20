@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Menu, X, Search, User } from 'lucide-react';
+import { Menu, X, Search, User, BookOpen, Sparkles } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const NavLinks = [
@@ -51,8 +51,12 @@ const Navbar = () => {
             to="/" 
             className="flex items-center gap-2 font-display text-xl font-medium"
           >
-            <span className="bg-primary text-white h-8 w-8 flex items-center justify-center rounded">FC</span>
-            Format Plus
+            <span className="relative flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary via-primary/80 to-indigo-600 shadow-md overflow-hidden">
+              <BookOpen className="h-5 w-5 text-white absolute" />
+              <Sparkles className="h-4 w-4 text-yellow-200 absolute animate-pulse opacity-70" style={{ left: '60%', top: '30%' }} />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 rounded-full"></div>
+            </span>
+            <span className="font-bold tracking-tighter bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">Format Plus</span>
           </Link>
 
           {/* Navigation Desktop */}
@@ -64,7 +68,7 @@ const Navbar = () => {
                 className={cn(
                   'px-4 py-2 text-sm rounded-md transition-colors',
                   location.pathname === link.path
-                    ? 'text-primary font-medium'
+                    ? 'text-primary font-medium bg-primary/10'
                     : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                 )}
               >
@@ -86,7 +90,11 @@ const Navbar = () => {
               Connexion
             </AnimatedButton>
             
-            <AnimatedButton variant="primary" size="sm">
+            <AnimatedButton 
+              variant="primary" 
+              size="sm" 
+              className="bg-gradient-to-r from-primary to-indigo-600 hover:from-primary/90 hover:to-indigo-700 shadow-md"
+            >
               Démarrer
             </AnimatedButton>
           </div>
@@ -121,7 +129,7 @@ const Navbar = () => {
               className={cn(
                 'px-4 py-3 rounded-md transition-colors',
                 location.pathname === link.path
-                  ? 'bg-accent text-primary font-medium'
+                  ? 'bg-primary/10 text-primary font-medium'
                   : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
               )}
             >
@@ -134,7 +142,11 @@ const Navbar = () => {
               Connexion
             </AnimatedButton>
             
-            <AnimatedButton variant="primary" size="sm" className="w-full justify-center">
+            <AnimatedButton 
+              variant="primary" 
+              size="sm" 
+              className="w-full justify-center bg-gradient-to-r from-primary to-indigo-600 hover:from-primary/90 hover:to-indigo-700 shadow-md"
+            >
               Démarrer
             </AnimatedButton>
           </div>
