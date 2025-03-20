@@ -7,151 +7,152 @@ import AnimatedButton from '@/components/ui/AnimatedButton';
 import { ChevronLeft, Clock, Users, Award, Book, CheckCircle2, Play, Globe, Download, Calendar } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Mock course data (in a real app, this would be fetched from an API)
+// Données de cours fictives (dans une application réelle, elles seraient récupérées via une API)
 const coursesData = {
   'azure-fundamentals': {
     title: 'Microsoft Azure Fundamentals',
-    description: 'Master the fundamentals of cloud services and Microsoft Azure implementation. This comprehensive course focuses on cloud concepts, core Azure services, security, privacy, compliance, and trust. Perfect for IT professionals beginning to work with cloud-based solutions and services.',
+    description: 'Maîtrisez les fondamentaux des services cloud et de l\'implémentation Microsoft Azure. Ce cours complet se concentre sur les concepts cloud, les services Azure de base, la sécurité, la confidentialité, la conformité et la confiance. Parfait pour les professionnels de l\'informatique qui commencent à travailler avec des solutions et services basés sur le cloud.',
     image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=2070&auto=format&fit=crop',
     category: 'Cloud',
-    duration: '25 hours',
+    duration: '25 heures',
     students: 12453,
     certificationPartner: 'Microsoft',
     certificationCode: 'AZ-900',
     price: 199,
     isNew: true,
     highlights: [
-      'Understand cloud concepts and models',
-      'Learn core Azure services and solutions',
-      'Master security, privacy, compliance, and trust',
-      'Understand Azure pricing and support',
-      'Prepare for the official AZ-900 certification exam'
+      'Comprendre les concepts et modèles du cloud',
+      'Apprendre les services et solutions Azure de base',
+      'Maîtriser la sécurité, la confidentialité, la conformité et la confiance',
+      'Comprendre la tarification et le support Azure',
+      'Préparer l\'examen de certification officiel AZ-900'
     ],
     modules: [
       {
-        title: 'Cloud Concepts',
+        title: 'Concepts Cloud',
         lessons: [
-          'Introduction to Cloud Computing',
-          'Cloud Service Models (IaaS, PaaS, SaaS)',
-          'Public, Private, and Hybrid Cloud',
-          'Cloud Benefits and Considerations'
+          'Introduction au Cloud Computing',
+          'Modèles de services cloud (IaaS, PaaS, SaaS)',
+          'Cloud public, privé et hybride',
+          'Avantages et considérations du cloud'
         ]
       },
       {
-        title: 'Core Azure Services',
+        title: 'Services Azure de base',
         lessons: [
-          'Azure Architecture and Components',
-          'Compute Services (VMs, Containers, Functions)',
-          'Storage Services and Solutions',
-          'Networking and Content Delivery'
+          'Architecture et composants Azure',
+          'Services de calcul (VMs, Conteneurs, Functions)',
+          'Services et solutions de stockage',
+          'Réseau et diffusion de contenu'
         ]
       },
       {
-        title: 'Security & Compliance',
+        title: 'Sécurité et conformité',
         lessons: [
-          'Azure Identity Services',
-          'Security Tools and Features',
-          'Governance Methodologies',
-          'Privacy, Compliance, and Data Protection'
+          'Services d\'identité Azure',
+          'Outils et fonctionnalités de sécurité',
+          'Méthodologies de gouvernance',
+          'Confidentialité, conformité et protection des données'
         ]
       },
       {
-        title: 'Azure Pricing & Support',
+        title: 'Tarification et support Azure',
         lessons: [
-          'Subscription Types and Management',
-          'Cost Management and Service Level Agreements',
-          'Service Lifecycle in Azure',
-          'Support Options and Community Resources'
+          'Types et gestion d\'abonnements',
+          'Gestion des coûts et accords de niveau de service',
+          'Cycle de vie des services dans Azure',
+          'Options de support et ressources communautaires'
         ]
       },
       {
-        title: 'Certification Preparation',
+        title: 'Préparation à la certification',
         lessons: [
-          'Exam Structure and Format',
-          'Study Strategies and Resources',
-          'Practice Questions and Assessments',
-          'Final Exam Preparation'
+          'Structure et format de l\'examen',
+          'Stratégies d\'étude et ressources',
+          'Questions pratiques et évaluations',
+          'Préparation finale à l\'examen'
         ]
       }
     ],
     instructors: [
       {
         name: 'Jennifer Wilson',
-        role: 'Azure Solutions Architect',
-        bio: '15+ years experience in cloud architecture with Microsoft certification expertise',
+        role: 'Architecte Solutions Azure',
+        bio: 'Plus de 15 ans d\'expérience en architecture cloud avec expertise en certification Microsoft',
         avatar: 'https://randomuser.me/api/portraits/women/45.jpg'
       }
     ]
   },
   'aws-solutions-architect': {
     title: 'AWS Solutions Architect Associate',
-    description: 'Learn how to design and deploy scalable, highly available systems on AWS infrastructure. This in-depth course covers the full spectrum of AWS services, focusing on best practices for architecture design, security, and optimization.',
+    description: 'Apprenez à concevoir et déployer des systèmes évolutifs et hautement disponibles sur l\'infrastructure AWS. Ce cours approfondi couvre l\'ensemble des services AWS, en mettant l\'accent sur les meilleures pratiques de conception d\'architecture, de sécurité et d\'optimisation.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop',
     category: 'Cloud',
-    duration: '40 hours',
+    duration: '40 heures',
     students: 8765,
     certificationPartner: 'Amazon',
     certificationCode: 'SAA-C03',
     price: 299,
+    isNew: false,
     highlights: [
-      'Design and deploy scalable AWS infrastructure',
-      'Implement security controls and data protection',
-      'Create automated and elastic architectures',
-      'Choose appropriate AWS services for applications',
-      'Optimize systems for cost-effectiveness and performance'
+      'Concevoir et déployer une infrastructure AWS évolutive',
+      'Implémenter des contrôles de sécurité et la protection des données',
+      'Créer des architectures automatisées et élastiques',
+      'Choisir les services AWS appropriés pour les applications',
+      'Optimiser les systèmes pour la rentabilité et les performances'
     ],
     modules: [
       {
-        title: 'AWS Fundamentals',
+        title: 'Fondamentaux AWS',
         lessons: [
-          'AWS Global Infrastructure',
-          'AWS Account Setup and Management',
-          'IAM and Account Security',
-          'AWS Command Line Interface'
+          'Infrastructure mondiale AWS',
+          'Configuration et gestion de compte AWS',
+          'IAM et sécurité du compte',
+          'Interface de ligne de commande AWS'
         ]
       },
       {
-        title: 'Compute Services',
+        title: 'Services de calcul',
         lessons: [
-          'EC2 and Instance Selection',
-          'Auto Scaling and Elastic Load Balancing',
-          'Containers on AWS (ECS and EKS)',
-          'Serverless Computing with Lambda'
+          'EC2 et sélection d\'instances',
+          'Auto Scaling et Elastic Load Balancing',
+          'Conteneurs sur AWS (ECS et EKS)',
+          'Informatique sans serveur avec Lambda'
         ]
       },
       {
-        title: 'Storage Solutions',
+        title: 'Solutions de stockage',
         lessons: [
-          'S3 Storage Classes and Features',
-          'EBS, EFS, and Storage Gateway',
-          'Database Selection (RDS, DynamoDB, Redshift)',
-          'Data Migration and Transfer Services'
+          'Classes et fonctionnalités de stockage S3',
+          'EBS, EFS et Storage Gateway',
+          'Sélection de base de données (RDS, DynamoDB, Redshift)',
+          'Services de migration et de transfert de données'
         ]
       },
       {
-        title: 'Networking',
+        title: 'Réseau',
         lessons: [
-          'VPC Design and Implementation',
-          'Routing, Security Groups, and NACLs',
-          'Direct Connect and VPN Options',
-          'Route 53 and DNS Management'
+          'Conception et implémentation de VPC',
+          'Routage, groupes de sécurité et NACL',
+          'Options Direct Connect et VPN',
+          'Route 53 et gestion DNS'
         ]
       },
       {
-        title: 'Architecture Design',
+        title: 'Conception d\'architecture',
         lessons: [
-          'High Availability and Fault Tolerance',
-          'Decoupling Mechanisms',
-          'Cost Optimization Strategies',
-          'Operational Excellence and Monitoring'
+          'Haute disponibilité et tolérance aux pannes',
+          'Mécanismes de découplage',
+          'Stratégies d\'optimisation des coûts',
+          'Excellence opérationnelle et surveillance'
         ]
       }
     ],
     instructors: [
       {
         name: 'Robert Chen',
-        role: 'AWS Certified Solutions Architect',
-        bio: 'Cloud consultant with 10+ years experience implementing AWS solutions',
+        role: 'Architecte Solutions AWS Certifié',
+        bio: 'Consultant cloud avec plus de 10 ans d\'expérience dans l\'implémentation de solutions AWS',
         avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
       }
     ]
@@ -161,10 +162,10 @@ const coursesData = {
 const CourseDetail = () => {
   const { id } = useParams<{ id: string }>();
   
-  // Get course data based on the id parameter
+  // Obtenir les données du cours en fonction du paramètre id
   const course = id ? coursesData[id as keyof typeof coursesData] : null;
   
-  // If course not found, display error message
+  // Si le cours n'est pas trouvé, afficher un message d'erreur
   if (!course) {
     return (
       <div className="min-h-screen flex flex-col">
@@ -177,17 +178,17 @@ const CourseDetail = () => {
                 className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <ChevronLeft className="mr-1 h-4 w-4" />
-                Back to catalog
+                Retour au catalogue
               </Link>
             </div>
             
             <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-              <h1 className="text-2xl font-bold mb-4">Course Not Found</h1>
+              <h1 className="text-2xl font-bold mb-4">Cours introuvable</h1>
               <p className="text-muted-foreground mb-8">
-                Sorry, we couldn't find the course you're looking for.
+                Désolé, nous n'avons pas pu trouver le cours que vous recherchez.
               </p>
-              <AnimatedButton as={Link} to="/catalog">
-                Browse All Courses
+              <AnimatedButton>
+                <Link to="/catalog">Parcourir tous les cours</Link>
               </AnimatedButton>
             </div>
           </div>
@@ -198,7 +199,7 @@ const CourseDetail = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navbar />
       <main className="flex-grow pt-24 pb-20">
         <div className="container px-4 md:px-6 mx-auto">
@@ -208,11 +209,11 @@ const CourseDetail = () => {
               className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <ChevronLeft className="mr-1 h-4 w-4" />
-              Back to catalog
+              Retour au catalogue
             </Link>
           </div>
           
-          {/* Course Header */}
+          {/* En-tête du cours */}
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             <div className="lg:col-span-2">
               <div className="flex flex-wrap gap-2 mb-4">
@@ -222,7 +223,7 @@ const CourseDetail = () => {
                 
                 {course.isNew && (
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/90 text-white">
-                    New
+                    Nouveau
                   </span>
                 )}
                 
@@ -241,15 +242,15 @@ const CourseDetail = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <Users className="w-4 h-4 text-muted-foreground" />
-                  <span>{course.students.toLocaleString()} students</span>
+                  <span>{course.students.toLocaleString()} étudiants</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Award className="w-4 h-4 text-muted-foreground" />
-                  <span>{course.certificationPartner} Certified</span>
+                  <span>Certifié {course.certificationPartner}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4 text-muted-foreground" />
-                  <span>Last updated 1 month ago</span>
+                  <span>Mis à jour il y a 1 mois</span>
                 </div>
               </div>
             </div>
@@ -266,30 +267,30 @@ const CourseDetail = () => {
                 
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-6">
-                    <div className="text-3xl font-bold">${course.price}</div>
-                    <div className="text-sm text-muted-foreground line-through">${course.price + 100}</div>
+                    <div className="text-3xl font-bold">{course.price}€</div>
+                    <div className="text-sm text-muted-foreground line-through">{course.price + 100}€</div>
                   </div>
                   
                   <AnimatedButton className="w-full mb-3 justify-center">
-                    Enroll Now
+                    S'inscrire maintenant
                   </AnimatedButton>
                   
                   <AnimatedButton variant="outline" className="w-full mb-6 justify-center">
-                    Try Free Preview
+                    Essayer gratuitement
                   </AnimatedButton>
                   
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 text-sm">
                       <Globe className="w-4 h-4 text-muted-foreground" />
-                      <span>Full Lifetime Access</span>
+                      <span>Accès à vie complet</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Download className="w-4 h-4 text-muted-foreground" />
-                      <span>Downloadable Resources</span>
+                      <span>Ressources téléchargeables</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <Award className="w-4 h-4 text-muted-foreground" />
-                      <span>Certificate of Completion</span>
+                      <span>Certificat d'achèvement</span>
                     </div>
                   </div>
                 </div>
@@ -297,12 +298,12 @@ const CourseDetail = () => {
             </div>
           </div>
           
-          {/* Course content */}
+          {/* Contenu du cours */}
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              {/* What you'll learn */}
+              {/* Ce que vous apprendrez */}
               <section className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">What You'll Learn</h2>
+                <h2 className="text-2xl font-bold mb-6">Ce que vous apprendrez</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {course.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-start gap-3">
@@ -315,15 +316,15 @@ const CourseDetail = () => {
                 </div>
               </section>
               
-              {/* Course content */}
+              {/* Contenu du cours */}
               <section className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Course Content</h2>
+                <h2 className="text-2xl font-bold mb-6">Contenu du cours</h2>
                 <div className="space-y-4">
                   {course.modules.map((module, moduleIndex) => (
                     <div key={moduleIndex} className="border border-border/50 rounded-lg overflow-hidden">
                       <div className="bg-secondary/50 px-6 py-4 flex justify-between items-center">
                         <h3 className="font-medium">{module.title}</h3>
-                        <span className="text-sm text-muted-foreground">{module.lessons.length} lessons</span>
+                        <span className="text-sm text-muted-foreground">{module.lessons.length} leçons</span>
                       </div>
                       <div className="px-6 py-2 divide-y divide-border/30">
                         {module.lessons.map((lesson, lessonIndex) => (
@@ -338,9 +339,9 @@ const CourseDetail = () => {
                 </div>
               </section>
               
-              {/* Instructor */}
+              {/* Instructeur */}
               <section className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Instructor</h2>
+                <h2 className="text-2xl font-bold mb-6">Instructeur</h2>
                 {course.instructors.map((instructor, index) => (
                   <div key={index} className="flex items-start gap-4">
                     <div className="w-16 h-16 rounded-full overflow-hidden">
@@ -361,34 +362,34 @@ const CourseDetail = () => {
             </div>
             
             <div className="lg:col-span-1">
-              {/* Requirements sidebar */}
+              {/* Exigences */}
               <div className="bg-card border border-border/50 rounded-lg p-6 shadow-subtle mb-6">
-                <h3 className="font-medium text-lg mb-4">Requirements</h3>
+                <h3 className="font-medium text-lg mb-4">Prérequis</h3>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0 text-primary mt-1">
                       <CheckCircle2 className="h-4 w-4" />
                     </div>
-                    <span>Basic understanding of cloud computing concepts</span>
+                    <span>Compréhension de base des concepts de cloud computing</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0 text-primary mt-1">
                       <CheckCircle2 className="h-4 w-4" />
                     </div>
-                    <span>Familiarity with IT infrastructure and networking</span>
+                    <span>Familiarité avec l'infrastructure IT et le réseau</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0 text-primary mt-1">
                       <CheckCircle2 className="h-4 w-4" />
                     </div>
-                    <span>No prior experience with {course.certificationPartner} services required</span>
+                    <span>Aucune expérience préalable avec les services {course.certificationPartner} requise</span>
                   </li>
                 </ul>
               </div>
               
-              {/* Certification details */}
+              {/* Détails de certification */}
               <div className="bg-card border border-border/50 rounded-lg p-6 shadow-subtle">
-                <h3 className="font-medium text-lg mb-4">Certification Details</h3>
+                <h3 className="font-medium text-lg mb-4">Détails de la certification</h3>
                 <div className="flex items-start gap-3 mb-4">
                   <div className="flex-shrink-0 p-2 bg-primary/10 rounded-md text-primary">
                     <Award className="h-5 w-5" />
@@ -396,18 +397,18 @@ const CourseDetail = () => {
                   <div>
                     <div className="font-medium mb-1">{course.certificationCode}</div>
                     <div className="text-sm text-muted-foreground">
-                      Official {course.certificationPartner} Certification
+                      Certification officielle {course.certificationPartner}
                     </div>
                   </div>
                 </div>
                 <p className="text-sm mb-4">
-                  Upon completion, you'll be prepared to take the official {course.certificationCode} certification exam and add this credential to your professional profile.
+                  À la fin, vous serez préparé à passer l'examen de certification officiel {course.certificationCode} et à ajouter cette référence à votre profil professionnel.
                 </p>
                 <a 
                   href="#" 
                   className="text-sm text-primary font-medium hover:underline"
                 >
-                  Learn more about this certification →
+                  En savoir plus sur cette certification →
                 </a>
               </div>
             </div>

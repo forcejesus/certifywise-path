@@ -6,15 +6,15 @@ import CourseCard from '@/components/ui/CourseCard';
 import { Search, Filter, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Mock data for the catalog courses
+// Données simulées pour le catalogue de cours
 const catalogCourses = [
   {
     id: 'azure-fundamentals',
     title: 'Microsoft Azure Fundamentals',
-    description: 'Master the fundamentals of cloud services and Azure implementation, focusing on core services and security concepts.',
+    description: 'Maîtrisez les fondamentaux des services cloud et de l\'implémentation Azure, en vous concentrant sur les services de base et les concepts de sécurité.',
     image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=2070&auto=format&fit=crop',
     category: 'Cloud',
-    duration: '25 hours',
+    duration: '25 heures',
     students: 12453,
     certificationPartner: 'Microsoft',
     isNew: true,
@@ -22,114 +22,120 @@ const catalogCourses = [
   {
     id: 'aws-solutions-architect',
     title: 'AWS Solutions Architect Associate',
-    description: 'Learn how to design and deploy scalable, highly available systems on AWS infrastructure.',
+    description: 'Apprenez à concevoir et déployer des systèmes évolutifs et hautement disponibles sur l\'infrastructure AWS.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop',
     category: 'Cloud',
-    duration: '40 hours',
+    duration: '40 heures',
     students: 8765,
     certificationPartner: 'Amazon',
+    isNew: false,
   },
   {
     id: 'gcp-cloud-engineer',
     title: 'Google Cloud Professional Cloud Engineer',
-    description: 'Design, develop, and manage secure infrastructures on Google Cloud Platform.',
+    description: 'Concevez, développez et gérez des infrastructures sécurisées sur Google Cloud Platform.',
     image: 'https://images.unsplash.com/photo-1508830524289-0adcbe822b40?q=80&w=2070&auto=format&fit=crop',
     category: 'Cloud',
-    duration: '35 hours',
+    duration: '35 heures',
     students: 5432,
     certificationPartner: 'Google',
+    isNew: false,
   },
   {
     id: 'react-advanced',
-    title: 'Advanced React Development',
-    description: 'Master advanced patterns and performance optimizations in React applications.',
+    title: 'Développement React Avancé',
+    description: 'Maîtrisez les modèles avancés et les optimisations de performance dans les applications React.',
     image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop',
-    category: 'Web Development',
-    duration: '30 hours',
+    category: 'Développement Web',
+    duration: '30 heures',
     students: 6723,
     certificationPartner: 'Meta',
+    isNew: false,
   },
   {
     id: 'cybersecurity-fundamentals',
-    title: 'Cybersecurity Fundamentals',
-    description: 'Establish a strong foundation in cybersecurity concepts, threat identification, and protective measures.',
+    title: 'Fondamentaux de la Cybersécurité',
+    description: 'Établissez une base solide dans les concepts de cybersécurité, l\'identification des menaces et les mesures de protection.',
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop',
-    category: 'Security',
-    duration: '35 hours',
+    category: 'Sécurité',
+    duration: '35 heures',
     students: 9342,
     certificationPartner: 'CompTIA',
+    isNew: false,
   },
   {
     id: 'data-science-python',
-    title: 'Data Science with Python',
-    description: 'Analyze and interpret complex data using Python and its powerful libraries.',
+    title: 'Data Science avec Python',
+    description: 'Analysez et interprétez des données complexes à l\'aide de Python et de ses puissantes bibliothèques.',
     image: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=2070&auto=format&fit=crop',
     category: 'Data Science',
-    duration: '45 hours',
+    duration: '45 heures',
     students: 7629,
     certificationPartner: 'IBM',
+    isNew: false,
   },
   {
     id: 'kubernetes-certification',
-    title: 'Certified Kubernetes Administrator',
-    description: 'Master Kubernetes cluster deployment, maintenance, and troubleshooting.',
+    title: 'Administrateur Kubernetes Certifié',
+    description: 'Maîtrisez le déploiement, la maintenance et le dépannage des clusters Kubernetes.',
     image: 'https://images.unsplash.com/photo-1646627927952-65824749ef49?q=80&w=2071&auto=format&fit=crop',
     category: 'DevOps',
-    duration: '38 hours',
+    duration: '38 heures',
     students: 4231,
     certificationPartner: 'CNCF',
     isNew: true,
   },
   {
     id: 'machine-learning-certification',
-    title: 'Machine Learning Engineer Certification',
-    description: 'Build and deploy machine learning models for real-world applications.',
+    title: 'Certification Ingénieur Machine Learning',
+    description: 'Construisez et déployez des modèles de machine learning pour des applications du monde réel.',
     image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2940&auto=format&fit=crop',
-    category: 'AI & Machine Learning',
-    duration: '50 hours',
+    category: 'IA & Machine Learning',
+    duration: '50 heures',
     students: 5827,
     certificationPartner: 'TensorFlow',
+    isNew: false,
   },
 ];
 
-// Mock filter categories
-const categories = ['All', 'Cloud', 'Web Development', 'Security', 'Data Science', 'DevOps', 'AI & Machine Learning'];
-const certifications = ['All', 'Microsoft', 'Amazon', 'Google', 'CompTIA', 'Meta', 'IBM', 'CNCF', 'TensorFlow'];
-const durations = ['All', 'Under 30 hours', '30-40 hours', 'Over 40 hours'];
+// Catégories de filtre simulées
+const categories = ['Tous', 'Cloud', 'Développement Web', 'Sécurité', 'Data Science', 'DevOps', 'IA & Machine Learning'];
+const certifications = ['Tous', 'Microsoft', 'Amazon', 'Google', 'CompTIA', 'Meta', 'IBM', 'CNCF', 'TensorFlow'];
+const durations = ['Tous', 'Moins de 30 heures', '30-40 heures', 'Plus de 40 heures'];
 
 const Catalog = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedCertification, setSelectedCertification] = useState('All');
-  const [selectedDuration, setSelectedDuration] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('Tous');
+  const [selectedCertification, setSelectedCertification] = useState('Tous');
+  const [selectedDuration, setSelectedDuration] = useState('Tous');
   const [showFilters, setShowFilters] = useState(false);
 
-  // Filter courses based on search and filters
+  // Filtrer les cours en fonction de la recherche et des filtres
   const filteredCourses = catalogCourses.filter((course) => {
-    // Search query filter
+    // Filtre de requête de recherche
     if (searchQuery && !course.title.toLowerCase().includes(searchQuery.toLowerCase()) && 
         !course.description.toLowerCase().includes(searchQuery.toLowerCase())) {
       return false;
     }
     
-    // Category filter
-    if (selectedCategory !== 'All' && course.category !== selectedCategory) {
+    // Filtre de catégorie
+    if (selectedCategory !== 'Tous' && course.category !== selectedCategory) {
       return false;
     }
     
-    // Certification filter
-    if (selectedCertification !== 'All' && course.certificationPartner !== selectedCertification) {
+    // Filtre de certification
+    if (selectedCertification !== 'Tous' && course.certificationPartner !== selectedCertification) {
       return false;
     }
     
-    // Duration filter
-    if (selectedDuration !== 'All') {
+    // Filtre de durée
+    if (selectedDuration !== 'Tous') {
       const hours = parseInt(course.duration);
-      if (selectedDuration === 'Under 30 hours' && hours >= 30) {
+      if (selectedDuration === 'Moins de 30 heures' && hours >= 30) {
         return false;
-      } else if (selectedDuration === '30-40 hours' && (hours < 30 || hours > 40)) {
+      } else if (selectedDuration === '30-40 heures' && (hours < 30 || hours > 40)) {
         return false;
-      } else if (selectedDuration === 'Over 40 hours' && hours <= 40) {
+      } else if (selectedDuration === 'Plus de 40 heures' && hours <= 40) {
         return false;
       }
     }
@@ -138,25 +144,25 @@ const Catalog = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navbar />
       <main className="flex-grow pt-24 pb-20">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Certification Courses</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">Cours de Certification</h1>
             <p className="text-muted-foreground max-w-3xl">
-              Browse our comprehensive catalog of industry-recognized certification courses. Filter by category, certification provider, or search for specific skills.
+              Parcourez notre catalogue complet de cours de certification reconnus par l'industrie. Filtrez par catégorie, organisme de certification, ou recherchez des compétences spécifiques.
             </p>
           </div>
           
-          {/* Search and filter section */}
+          {/* Section de recherche et de filtre */}
           <div className="mb-8">
             <div className="flex flex-col md:flex-row gap-4 mb-4">
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Search courses..."
+                  placeholder="Rechercher des cours..."
                   className="w-full pl-10 pr-4 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -168,14 +174,14 @@ const Catalog = () => {
                 onClick={() => setShowFilters(!showFilters)}
               >
                 <Filter className="h-4 w-4" />
-                Filters
+                Filtres
               </button>
             </div>
             
-            {/* Desktop filters */}
+            {/* Filtres pour ordinateur */}
             <div className="hidden md:flex flex-wrap gap-6 mb-6">
               <div>
-                <div className="font-medium text-sm mb-2">Category</div>
+                <div className="font-medium text-sm mb-2">Catégorie</div>
                 <div className="flex flex-wrap gap-2">
                   {categories.map((category) => (
                     <button
@@ -195,7 +201,7 @@ const Catalog = () => {
               </div>
               
               <div>
-                <div className="font-medium text-sm mb-2">Certification Provider</div>
+                <div className="font-medium text-sm mb-2">Organisme de Certification</div>
                 <div className="flex flex-wrap gap-2">
                   {certifications.map((cert) => (
                     <button
@@ -215,7 +221,7 @@ const Catalog = () => {
               </div>
               
               <div>
-                <div className="font-medium text-sm mb-2">Duration</div>
+                <div className="font-medium text-sm mb-2">Durée</div>
                 <div className="flex flex-wrap gap-2">
                   {durations.map((duration) => (
                     <button
@@ -235,13 +241,13 @@ const Catalog = () => {
               </div>
             </div>
             
-            {/* Mobile filters (collapsible) */}
+            {/* Filtres pour mobile (pliables) */}
             <div className={cn(
               'md:hidden space-y-6 bg-card p-4 rounded-lg border mb-6',
               showFilters ? 'block' : 'hidden'
             )}>
               <div>
-                <div className="font-medium text-sm mb-2">Category</div>
+                <div className="font-medium text-sm mb-2">Catégorie</div>
                 <div className="flex flex-wrap gap-2">
                   {categories.map((category) => (
                     <button
@@ -261,7 +267,7 @@ const Catalog = () => {
               </div>
               
               <div>
-                <div className="font-medium text-sm mb-2">Certification Provider</div>
+                <div className="font-medium text-sm mb-2">Organisme de Certification</div>
                 <div className="flex flex-wrap gap-2">
                   {certifications.map((cert) => (
                     <button
@@ -281,7 +287,7 @@ const Catalog = () => {
               </div>
               
               <div>
-                <div className="font-medium text-sm mb-2">Duration</div>
+                <div className="font-medium text-sm mb-2">Durée</div>
                 <div className="flex flex-wrap gap-2">
                   {durations.map((duration) => (
                     <button
@@ -303,11 +309,11 @@ const Catalog = () => {
             
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Filter className="h-4 w-4" />
-              <span>Showing {filteredCourses.length} of {catalogCourses.length} courses</span>
+              <span>Affichage de {filteredCourses.length} cours sur {catalogCourses.length}</span>
             </div>
           </div>
           
-          {/* Courses grid */}
+          {/* Grille de cours */}
           {filteredCourses.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCourses.map((course) => (
@@ -322,20 +328,20 @@ const Catalog = () => {
               <div className="mb-4 p-3 rounded-full bg-secondary/50 text-muted-foreground">
                 <Search className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-medium mb-2">No courses found</h3>
+              <h3 className="text-lg font-medium mb-2">Aucun cours trouvé</h3>
               <p className="text-muted-foreground max-w-md mb-6">
-                We couldn't find any courses matching your search criteria. Try adjusting your filters or search query.
+                Nous n'avons trouvé aucun cours correspondant à vos critères de recherche. Essayez d'ajuster vos filtres ou votre requête de recherche.
               </p>
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedCategory('All');
-                  setSelectedCertification('All');
-                  setSelectedDuration('All');
+                  setSelectedCategory('Tous');
+                  setSelectedCertification('Tous');
+                  setSelectedDuration('Tous');
                 }}
                 className="text-primary font-medium hover:underline"
               >
-                Clear all filters
+                Effacer tous les filtres
               </button>
             </div>
           )}

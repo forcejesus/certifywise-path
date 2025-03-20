@@ -9,7 +9,7 @@ import TestimonialSection from '@/components/home/TestimonialSection';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navbar />
       <main className="flex-grow">
         <Hero />

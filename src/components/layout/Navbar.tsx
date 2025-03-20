@@ -6,10 +6,10 @@ import { Menu, X, Search, User } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const NavLinks = [
-  { title: 'Home', path: '/' },
-  { title: 'Catalog', path: '/catalog' },
-  { title: 'For Business', path: '/business' },
-  { title: 'About', path: '/about' },
+  { title: 'Accueil', path: '/' },
+  { title: 'Catalogue', path: '/catalog' },
+  { title: 'Entreprises', path: '/business' },
+  { title: 'À propos', path: '/about' },
 ];
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when changing routes
+  // Fermer le menu mobile lors du changement de routes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
@@ -51,11 +51,11 @@ const Navbar = () => {
             to="/" 
             className="flex items-center gap-2 font-display text-xl font-medium"
           >
-            <span className="bg-primary text-white h-8 w-8 flex items-center justify-center rounded">CW</span>
-            CertifyWise
+            <span className="bg-primary text-white h-8 w-8 flex items-center justify-center rounded">FC</span>
+            Format Plus
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Navigation Desktop */}
           <nav className="hidden md:flex items-center space-x-1">
             {NavLinks.map((link) => (
               <Link
@@ -73,29 +73,29 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Desktop Right Actions */}
+          {/* Actions Desktop */}
           <div className="hidden md:flex items-center space-x-2">
             <button 
               className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors"
-              aria-label="Search"
+              aria-label="Rechercher"
             >
               <Search className="h-5 w-5" />
             </button>
             
             <AnimatedButton variant="ghost" size="sm" className="gap-2" icon={<User className="h-4 w-4" />}>
-              Log in
+              Connexion
             </AnimatedButton>
             
             <AnimatedButton variant="primary" size="sm">
-              Get Started
+              Démarrer
             </AnimatedButton>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Bouton Menu Mobile */}
           <button 
             className="md:hidden p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" />
@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menu Mobile */}
       <div 
         className={cn(
           'fixed inset-x-0 bg-background/95 backdrop-blur-sm border-b border-border/50 transition-all duration-300 ease-in-out overflow-hidden md:hidden',
@@ -131,11 +131,11 @@ const Navbar = () => {
           
           <div className="pt-2 mt-2 border-t border-border/30 flex flex-col space-y-3">
             <AnimatedButton variant="ghost" size="sm" className="w-full justify-center" icon={<User className="h-4 w-4" />}>
-              Log in
+              Connexion
             </AnimatedButton>
             
             <AnimatedButton variant="primary" size="sm" className="w-full justify-center">
-              Get Started
+              Démarrer
             </AnimatedButton>
           </div>
         </div>
