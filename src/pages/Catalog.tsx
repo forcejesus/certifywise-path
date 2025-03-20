@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -144,13 +143,23 @@ const Catalog = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden relative">
+      {/* Éléments d'arrière-plan décoratifs */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full bg-grid-pattern opacity-[0.03]"></div>
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-purple-200/10 rounded-full blur-3xl"></div>
+      </div>
+
       <Navbar />
       <main className="flex-grow pt-24 pb-20">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Cours de Certification</h1>
-            <p className="text-muted-foreground max-w-3xl">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-indigo-600 to-purple-600 text-transparent bg-clip-text">
+              Cours de Certification
+            </h1>
+            <p className="text-muted-foreground max-w-3xl text-balance">
               Parcourez notre catalogue complet de cours de certification reconnus par l'industrie. Filtrez par catégorie, organisme de certification, ou recherchez des compétences spécifiques.
             </p>
           </div>
@@ -313,19 +322,24 @@ const Catalog = () => {
             </div>
           </div>
           
-          {/* Grille de cours */}
+          {/* Grille de cours avec animation d'apparition */}
           {filteredCourses.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredCourses.map((course) => (
-                <CourseCard 
+              {filteredCourses.map((course, index) => (
+                <div 
                   key={course.id} 
-                  {...course}
-                />
+                  className="opacity-0 animate-fade-up" 
+                  style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+                >
+                  <CourseCard 
+                    {...course}
+                  />
+                </div>
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-              <div className="mb-4 p-3 rounded-full bg-secondary/50 text-muted-foreground">
+            <div className="flex flex-col items-center justify-center py-16 px-4 text-center bg-white/50 backdrop-blur-sm rounded-2xl border border-white/70 shadow-sm">
+              <div className="mb-4 p-4 rounded-full bg-secondary/50 text-muted-foreground">
                 <Search className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-medium mb-2">Aucun cours trouvé</h3>
@@ -339,7 +353,7 @@ const Catalog = () => {
                   setSelectedCertification('Tous');
                   setSelectedDuration('Tous');
                 }}
-                className="text-primary font-medium hover:underline"
+                className="text-primary font-medium px-4 py-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
                 Effacer tous les filtres
               </button>
