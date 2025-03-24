@@ -9,7 +9,7 @@ const Hero = () => {
     <section className="pt-32 pb-24 overflow-hidden relative">
       {/* Bannière de fond */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 to-indigo-50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070')] bg-cover bg-center opacity-15"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-indigo-500/20"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-200/20 via-transparent to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent"></div>
