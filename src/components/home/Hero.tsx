@@ -9,8 +9,9 @@ const Hero = () => {
     <section className="pt-32 pb-24 overflow-hidden relative">
       {/* Bannière de fond */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 to-indigo-50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-indigo-500/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-200/20 via-transparent to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent"></div>
       </div>
       
@@ -18,6 +19,7 @@ const Hero = () => {
       <div className="absolute inset-0 -z-5">
         <div className="absolute top-1/3 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute top-40 -left-40 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       
