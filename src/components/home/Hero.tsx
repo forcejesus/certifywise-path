@@ -7,12 +7,21 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <section className="pt-32 pb-24 overflow-hidden relative">
-      {/* Éléments d'arrière-plan */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-100 via-transparent to-transparent opacity-80"></div>
-      <div className="absolute top-1/3 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      {/* Bannière de fond */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 to-indigo-50 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-indigo-500/20"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent"></div>
+      </div>
+      
+      {/* Éléments d'arrière-plan décoratifs avec overlay */}
+      <div className="absolute inset-0 -z-5">
+        <div className="absolute top-1/3 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 -left-40 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl"></div>
+      </div>
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
       
-      <div className="container px-4 md:px-6 mx-auto">
+      <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <div 
             className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium backdrop-blur-xl bg-accent/70 text-accent-foreground mb-6 animate-fade-in shimmer"
@@ -93,7 +102,7 @@ const Hero = () => {
           </div>
           
           {/* Bannière avec logos de certification */}
-          <div className="mt-20 w-full py-6 px-8 rounded-xl bg-white shadow-sm border border-slate-100 animate-on-scroll">
+          <div className="mt-20 w-full py-6 px-8 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm border border-slate-100 animate-on-scroll">
             <p className="text-sm text-slate-500 mb-4 text-center">Nos certifications sont reconnues par les leaders du marché</p>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" alt="AWS" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
@@ -107,7 +116,7 @@ const Hero = () => {
           
           {/* Avantages */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-left animate-on-scroll">
-            <div className="flex flex-col p-6 rounded-xl border border-slate-100 bg-white shadow-sm">
+            <div className="flex flex-col p-6 rounded-xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600" />
@@ -117,7 +126,7 @@ const Hero = () => {
               <p className="text-sm text-slate-600">Tout ce dont vous avez besoin pour réussir votre examen de certification du premier coup.</p>
             </div>
             
-            <div className="flex flex-col p-6 rounded-xl border border-slate-100 bg-white shadow-sm">
+            <div className="flex flex-col p-6 rounded-xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-50">
                   <ShieldCheck className="w-5 h-5 text-blue-600" />
@@ -127,7 +136,7 @@ const Hero = () => {
               <p className="text-sm text-slate-600">Matériel pédagogique conforme aux exigences des organismes certificateurs.</p>
             </div>
             
-            <div className="flex flex-col p-6 rounded-xl border border-slate-100 bg-white shadow-sm">
+            <div className="flex flex-col p-6 rounded-xl border border-slate-100 bg-white/90 backdrop-blur-sm shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-indigo-50">
                   <Sparkles className="w-5 h-5 text-indigo-600" />
