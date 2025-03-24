@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Menu, X, Search, User, BookOpen, Sparkles } from 'lucide-react';
+import { Menu, X, Search, User, BookOpen, Sparkles, Shield } from 'lucide-react';
 import AnimatedButton from '../ui/AnimatedButton';
 
 const NavLinks = [
@@ -51,10 +51,10 @@ const Navbar = () => {
             to="/" 
             className="flex items-center gap-2 font-display text-xl font-medium"
           >
-            <span className="relative flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-primary via-primary/80 to-indigo-600 shadow-md overflow-hidden">
-              <BookOpen className="h-5 w-5 text-white absolute" />
-              <Sparkles className="h-4 w-4 text-yellow-200 absolute animate-pulse opacity-70" style={{ left: '60%', top: '30%' }} />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 rounded-full"></div>
+            <span className="relative flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-br from-primary to-indigo-600 shadow-md overflow-hidden">
+              <Shield className="h-5 w-5 text-white absolute" />
+              <Sparkles className="h-4 w-4 text-yellow-200 absolute animate-pulse opacity-70" style={{ right: '25%', top: '25%' }} />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20"></div>
             </span>
             <span className="font-bold tracking-tighter bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">Format Plus</span>
           </Link>
