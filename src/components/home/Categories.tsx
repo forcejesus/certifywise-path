@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { ArrowRight, Cloud, Code, Database, ShieldCheck, Cpu, Server, Layers, LineChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CategoryCard from '../ui/CategoryCard';
+import AnimatedButton from '../ui/AnimatedButton';
 
 // Données simulées pour les catégories de cours
 const categories = [
