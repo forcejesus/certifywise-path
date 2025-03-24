@@ -1,9 +1,10 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CourseCard from '../ui/CourseCard';
 import AnimatedButton from '../ui/AnimatedButton';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 
 // Données simulées pour les cours mis en avant
 const featuredCourses = [
@@ -67,12 +68,20 @@ const featuredCourses = [
 
 const FeaturedCourses = () => {
   return (
-    <section className="py-20 relative bg-gradient-to-b from-white to-blue-50">
+    <section className="py-24 relative overflow-hidden">
+      {/* Fond avec effets */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-blue-50/70 to-indigo-50/50"></div>
+      <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+        {/* En-tête de section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 animate-on-scroll">
           <div>
-            <h2 className="text-3xl font-bold mb-3">Certifications Populaires</h2>
+            <div className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
+              <TrendingUp className="w-4 h-4 mr-1.5" /> Formations les plus populaires
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 neo-gradient">Certifications Populaires</h2>
             <p className="text-muted-foreground max-w-2xl">
               Nos cours les plus populaires, conçus en collaboration avec les leaders de l'industrie pour vous aider à obtenir des certifications reconnues.
             </p>
@@ -86,19 +95,63 @@ const FeaturedCourses = () => {
           </Link>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredCourses.map((course) => (
-            <CourseCard 
+        {/* Carousel pour les appareils mobiles */}
+        <div className="md:hidden w-full mb-10">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {featuredCourses.map((course) => (
+                <CarouselItem key={course.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <CourseCard {...course} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-4" />
+            <CarouselNext className="absolute right-4" />
+          </Carousel>
+        </div>
+        
+        {/* Grille pour les tablettes et ordinateurs */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredCourses.map((course, index) => (
+            <div 
               key={course.id} 
-              {...course}
-            />
+              className="animate-on-scroll"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <CourseCard {...course} />
+            </div>
           ))}
         </div>
         
-        <div className="flex justify-center mt-12">
-          <AnimatedButton size="lg">
-            <Link to="/catalog">Explorer tous les cours</Link>
+        {/* Bouton d'action */}
+        <div className="flex justify-center mt-12 animate-on-scroll">
+          <AnimatedButton 
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md hover:shadow-lg py-6 px-8 hover:scale-105 transition-transform duration-300"
+          >
+            <Link to="/catalog" className="flex items-center">
+              Explorer tous les cours
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </AnimatedButton>
+        </div>
+        
+        {/* Badges statistiques */}
+        <div className="mt-24 flex flex-wrap justify-center gap-x-16 gap-y-8 animate-on-scroll">
+          <div className="flex flex-col items-center bg-white/80 backdrop-blur-sm shadow-sm rounded-xl px-8 py-6 border border-gray-100">
+            <div className="text-4xl font-bold mb-2 text-primary">94%</div>
+            <div className="text-muted-foreground text-center">de taux de réussite aux examens</div>
+          </div>
+          <div className="flex flex-col items-center bg-white/80 backdrop-blur-sm shadow-sm rounded-xl px-8 py-6 border border-gray-100">
+            <div className="text-4xl font-bold mb-2 text-indigo-600">+40%</div>
+            <div className="text-muted-foreground text-center">d'évolution salariale moyenne</div>
+          </div>
+          <div className="flex flex-col items-center bg-white/80 backdrop-blur-sm shadow-sm rounded-xl px-8 py-6 border border-gray-100">
+            <div className="text-4xl font-bold mb-2 text-purple-600">4.8/5</div>
+            <div className="text-muted-foreground text-center">satisfaction des apprenants</div>
+          </div>
         </div>
       </div>
     </section>
